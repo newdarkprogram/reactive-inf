@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth antialiased __variable_d65c78 __variable_43fb55"
+  data-sentry-component="RootLayout" data-sentry-source-file="layout.tsx" style=""
+  data-scrapbook-source="https://portal.reactive.network/" data-scrapbook-create="20250311024923187"
+  data-scrapbook-adoptedstylesheet-0=":host { display: inline-block; direction: ltr; white-space: nowrap; isolation: isolate; line-height: var(--number-flow-char-height, 1em) !important; }
+
+.number, .number__inner { display: inline-block; transform-origin: left top; }
+
+:host([data-will-change]) :is(.number, .number__inner, .section, .digit, .digit__num, .symbol) { will-change: transform; }
+
+.number { --scale-x: calc(1 + var(--_number-flow-d-width) / var(--width)); transform: translateX(var(--_number-flow-dx)) scaleX(var(--scale-x)); margin: 0 calc(-1 * var(--number-flow-mask-width, 0.5em)); position: relative; mask-image: linear-gradient(to right,transparent 0,#000 calc(var(--number-flow-mask-width, 0.5em) / var(--scale-x)),#000 calc(100% - calc(var(--number-flow-mask-width, 0.5em) / var(--scale-x))),transparent ),linear-gradient(to bottom,transparent 0,#000 var(--number-flow-mask-height, 0.25em),#000 calc(100% - var(--number-flow-mask-height, 0.25em)),transparent 100% ),radial-gradient(at bottom right,#000 0, transparent 71%),radial-gradient(at bottom left,#000 0, transparent 71%),radial-gradient(at top left,#000 0, transparent 71%),radial-gradient(at top right,#000 0, transparent 71%); mask-size: 100% calc(100% - var(--number-flow-mask-height, 0.25em) * 2),calc(100% - calc(var(--number-flow-mask-width, 0.5em) / var(--scale-x)) * 2) 100%,calc(var(--number-flow-mask-width, 0.5em) / var(--scale-x)) var(--number-flow-mask-height, 0.25em),calc(var(--number-flow-mask-width, 0.5em) / var(--scale-x)) var(--number-flow-mask-height, 0.25em),calc(var(--number-flow-mask-width, 0.5em) / var(--scale-x)) var(--number-flow-mask-height, 0.25em),calc(var(--number-flow-mask-width, 0.5em) / var(--scale-x)) var(--number-flow-mask-height, 0.25em); mask-position: center center, center center, left top, right top, right bottom, left bottom; mask-repeat: no-repeat; }
+
+.number__inner { padding: calc(var(--number-flow-mask-height, 0.25em) / 2) var(--number-flow-mask-width, 0.5em); transform: scaleX(calc(1 / var(--scale-x))) translateX(calc(-1 * var(--_number-flow-dx))); }
+
+:host > :not(.number) { z-index: 5; }
+
+.section, .symbol { display: inline-block; position: relative; isolation: isolate; }
+
+.section::after { content: &quot;​&quot;; display: inline-block; }
+
+.section--justify-left { transform-origin: left center; }
+
+.section--justify-right { transform-origin: right center; }
+
+.section > [inert], .symbol > [inert] { z-index: -1; margin: 0px !important; position: absolute !important; }
+
+.digit { display: inline-block; position: relative; --c: var(--current) + var(--_number-flow-d); }
+
+.digit__num, .number .section::after { padding: calc(var(--number-flow-mask-height, 0.25em) / 2) 0; }
+
+.digit__num { display: inline-block; --offset-raw: mod(var(--length) + var(--n) - mod(var(--c),var(--length)),var(--length)); --offset: calc( var(--offset-raw) - var(--length) * round(down,var(--offset-raw) / (var(--length) / 2),1) ); --y: clamp(-100%,var(--offset) * 100%,100%); transform: translateY(var(--y)); }
+
+.digit__num[inert] { position: absolute; top: 0px; left: 50%; transform: translateX(-50%) translateY(var(--y)); }
+
+.digit:not(.is-spinning) .digit__num[inert] { display: none; }
+
+.symbol__value { display: inline-block; mix-blend-mode: plus-lighter; white-space: pre; }
+
+.section--justify-left .symbol > [inert] { left: 0px; }
+
+.section--justify-right .symbol > [inert] { right: 0px; }
+
+.animate-presence { opacity: calc(1 + var(--_number-flow-d-opacity)); }">
+
+<head>
+  <script charset="UTF-8" type="text/javascript" src="./05913fd8-ad22-403b-ba48-6d177a4a2b50.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="14f3eae4595c0e6c.css" data-precedence="next">
+  <meta name="next-size-adjust" content="">
+  <title>Reactive - Token Portal</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="256x256">
+  <style data-styled="active" data-styled-version="5.3.11">
+    .fNcSQw {
+      --ck-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+      --ck-border-radius: 20px;
+      --ck-secondary-button-border-radius: 16px;
+      --ck-family-brand: #1A88F8;
+      --ck-brand-walletConnect: #3B99FC;
+      --ck-brand-coinbaseWallet: #0052FF;
+      --ck-brand-metamask: #f6851b;
+      --ck-brand-metamask-01: #F6851B;
+      --ck-brand-metamask-02: #E2761B;
+      --ck-brand-metamask-03: #CD6116;
+      --ck-brand-metamask-04: #161616;
+      --ck-brand-metamask-05: #763D16;
+      --ck-brand-metamask-06: #D7C1B3;
+      --ck-brand-metamask-07: #C0AD9E;
+      --ck-brand-metamask-08: #E4761B;
+      --ck-brand-metamask-09: #233447;
+      --ck-brand-metamask-10: #E4751F;
+      --ck-brand-metamask-11: #FEF5E7;
+      --ck-brand-metamask-12: #E3C8AB;
+      --ck-brand-trust-01: #3375BB;
+      --ck-brand-trust-02: #ffffff;
+      --ck-brand-trust-01b: #ffffff;
+      --ck-brand-trust-02b: #3375BB;
+      --ck-brand-argent: #f36a3d;
+      --ck-brand-imtoken-01: #11C4D1;
+      --ck-brand-imtoken-02: #0062AD;
+      --ck-brand-safe: #12FF80;
+      --ck-brand-dawn: #000000;
+      --ck-ens-01-start: #FF3B30;
+      --ck-ens-01-stop: #FF9500;
+      --ck-ens-02-start: #FF9500;
+      --ck-ens-02-stop: #FFCC00;
+      --ck-ens-03-start: #FFCC00;
+      --ck-ens-03-stop: #34C759;
+      --ck-ens-04-start: #5856D6;
+      --ck-ens-04-stop: #AF52DE;
+      --ck-ens-05-start: #5AC8FA;
+      --ck-ens-05-stop: #007AFF;
+      --ck-ens-06-start: #007AFF;
+      --ck-ens-06-stop: #5856D6;
+      --ck-ens-07-start: #5856D6;
+      --ck-ens-07-stop: #AF52DE;
+      --ck-ens-08-start: #AF52DE;
+      --ck-ens-08-stop: #FF2D55;
+      --ck-graphic-wave-stop-01: #E8F17D;
+      --ck-graphic-wave-stop-02: #A8ECDE;
+      --ck-graphic-wave-stop-03: #7AA1F2;
+      --ck-graphic-wave-stop-04: #DEA1E8;
+      --ck-graphic-wave-stop-05: #F46D98;
+      --ck-graphic-scaniconwithlogos-01: #4E4E4E;
+      --ck-graphic-scaniconwithlogos-02: #272727;
+      --ck-graphic-scaniconwithlogos-03: #F8D74A;
+      --ck-graphic-scaniconwithlogos-04: #F6F7F9;
+      --ck-chain-ethereum-01: #25292E;
+      --ck-chain-ethereum-02: #fff;
+      --ck-chain-ethereum-03: #DFE0E0;
+      color-scheme: initial;
+      forced-color-adjust: initial;
+      mask: initial;
+      math-depth: initial;
+      position: initial;
+      position-anchor: initial;
+      text-size-adjust: none;
+      appearance: initial;
+      color: initial;
+      font-family: initial;
+      font-feature-settings: initial;
+      font-kerning: initial;
+      font-optical-sizing: initial;
+      font-palette: initial;
+      font-size: 16px;
+      font-size-adjust: initial;
+      font-stretch: initial;
+      font-style: initial;
+      font-synthesis: initial;
+      font-variant: initial;
+      font-variation-settings: initial;
+      font-weight: initial;
+      position-area: initial;
+      text-orientation: initial;
+      text-rendering: optimizelegibility;
+      text-spacing-trim: initial;
+      -webkit-font-smoothing: antialiased;
+      -webkit-locale: initial;
+      -webkit-text-orientation: initial;
+      -webkit-writing-mode: initial;
+      writing-mode: initial;
+      zoom: initial;
+      accent-color: initial;
+      place-content: initial;
+      place-items: initial;
+      place-self: initial;
+      alignment-baseline: initial;
+      anchor-name: initial;
+      anchor-scope: initial;
+      animation-composition: initial;
+      animation: initial;
+      app-region: initial;
+      aspect-ratio: initial;
+      backdrop-filter: initial;
+      backface-visibility: initial;
+      background: initial;
+      background-blend-mode: initial;
+      baseline-shift: initial;
+      baseline-source: initial;
+      block-size: initial;
+      border-block: initial;
+      border: initial;
+      border-radius: initial;
+      border-collapse: initial;
+      border-end-end-radius: initial;
+      border-end-start-radius: initial;
+      border-inline: initial;
+      border-start-end-radius: initial;
+      border-start-start-radius: initial;
+      inset: initial;
+      box-decoration-break: initial;
+      box-shadow: initial;
+      box-sizing: initial;
+      break-after: initial;
+      break-before: initial;
+      break-inside: initial;
+      buffered-rendering: initial;
+      caption-side: initial;
+      caret-color: initial;
+      clear: initial;
+      clip: initial;
+      clip-path: initial;
+      clip-rule: initial;
+      color-interpolation: initial;
+      color-interpolation-filters: initial;
+      color-rendering: initial;
+      columns: initial;
+      column-fill: initial;
+      gap: initial;
+      column-rule: initial;
+      column-span: initial;
+      contain: initial;
+      contain-intrinsic-block-size: initial;
+      contain-intrinsic-size: initial;
+      contain-intrinsic-inline-size: initial;
+      container: initial;
+      content: initial;
+      content-visibility: initial;
+      counter-increment: initial;
+      counter-reset: initial;
+      counter-set: initial;
+      cursor: initial;
+      cx: initial;
+      cy: initial;
+      d: initial;
+      display: initial;
+      dominant-baseline: initial;
+      empty-cells: initial;
+      field-sizing: initial;
+      fill: initial;
+      fill-opacity: initial;
+      fill-rule: initial;
+      filter: initial;
+      flex: initial;
+      flex-flow: initial;
+      float: initial;
+      flood-color: initial;
+      flood-opacity: initial;
+      grid: initial;
+      grid-area: initial;
+      height: initial;
+      hyphenate-character: initial;
+      hyphenate-limit-chars: initial;
+      hyphens: initial;
+      image-orientation: initial;
+      image-rendering: initial;
+      initial-letter: initial;
+      inline-size: initial;
+      inset-block: initial;
+      inset-inline: initial;
+      interpolate-size: initial;
+      isolation: initial;
+      letter-spacing: initial;
+      lighting-color: initial;
+      line-break: initial;
+      line-height: initial;
+      list-style: initial;
+      margin-block: initial;
+      margin: initial;
+      margin-inline: initial;
+      marker: initial;
+      mask-type: initial;
+      math-shift: initial;
+      math-style: initial;
+      max-block-size: initial;
+      max-height: initial;
+      max-inline-size: initial;
+      max-width: initial;
+      min-block-size: initial;
+      min-height: initial;
+      min-inline-size: initial;
+      min-width: initial;
+      mix-blend-mode: initial;
+      object-fit: initial;
+      object-position: initial;
+      object-view-box: initial;
+      offset: initial;
+      opacity: initial;
+      order: initial;
+      orphans: initial;
+      outline: initial;
+      outline-offset: initial;
+      overflow-anchor: initial;
+      overflow-clip-margin: initial;
+      overflow-wrap: initial;
+      overflow: initial;
+      overlay: initial;
+      overscroll-behavior-block: initial;
+      overscroll-behavior-inline: initial;
+      overscroll-behavior: initial;
+      padding-block: initial;
+      padding: initial;
+      padding-inline: initial;
+      page: initial;
+      page-orientation: initial;
+      paint-order: initial;
+      perspective: initial;
+      perspective-origin: initial;
+      pointer-events: initial;
+      position-try: initial;
+      position-visibility: initial;
+      quotes: initial;
+      r: initial;
+      resize: initial;
+      rotate: initial;
+      ruby-align: initial;
+      ruby-position: initial;
+      rx: initial;
+      ry: initial;
+      scale: initial;
+      scroll-behavior: initial;
+      scroll-initial-target: initial;
+      scroll-margin-block: initial;
+      scroll-margin: initial;
+      scroll-margin-inline: initial;
+      scroll-padding-block: initial;
+      scroll-padding: initial;
+      scroll-padding-inline: initial;
+      scroll-snap-align: initial;
+      scroll-snap-stop: initial;
+      scroll-snap-type: initial;
+      scroll-timeline: initial;
+      scrollbar-color: initial;
+      scrollbar-gutter: initial;
+      scrollbar-width: initial;
+      shape-image-threshold: initial;
+      shape-margin: initial;
+      shape-outside: initial;
+      shape-rendering: initial;
+      size: initial;
+      speak: initial;
+      stop-color: initial;
+      stop-opacity: initial;
+      stroke: initial;
+      stroke-dasharray: initial;
+      stroke-dashoffset: initial;
+      stroke-linecap: initial;
+      stroke-linejoin: initial;
+      stroke-miterlimit: initial;
+      stroke-opacity: initial;
+      stroke-width: initial;
+      tab-size: initial;
+      table-layout: initial;
+      text-align: left;
+      text-align-last: initial;
+      text-anchor: initial;
+      text-box: initial;
+      text-combine-upright: initial;
+      text-decoration: initial;
+      text-decoration-skip-ink: initial;
+      text-emphasis: initial;
+      text-emphasis-position: initial;
+      text-indent: initial;
+      text-overflow: initial;
+      text-shadow: initial;
+      text-transform: initial;
+      text-underline-offset: initial;
+      text-underline-position: initial;
+      text-wrap: initial;
+      timeline-scope: initial;
+      touch-action: initial;
+      transform: initial;
+      transform-box: initial;
+      transform-origin: initial;
+      transform-style: initial;
+      transition: initial;
+      translate: initial;
+      user-select: initial;
+      vector-effect: initial;
+      vertical-align: initial;
+      view-timeline: initial;
+      view-transition-class: initial;
+      view-transition-name: initial;
+      visibility: initial;
+      border-spacing: initial;
+      -webkit-box-align: initial;
+      -webkit-box-decoration-break: initial;
+      -webkit-box-direction: initial;
+      -webkit-box-flex: initial;
+      -webkit-box-ordinal-group: initial;
+      -webkit-box-orient: initial;
+      -webkit-box-pack: initial;
+      -webkit-box-reflect: initial;
+      -webkit-line-break: initial;
+      -webkit-line-clamp: initial;
+      -webkit-mask-box-image: initial;
+      -webkit-print-color-adjust: initial;
+      -webkit-rtl-ordering: initial;
+      -webkit-ruby-position: initial;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-text-combine: initial;
+      -webkit-text-decorations-in-effect: initial;
+      -webkit-text-fill-color: initial;
+      -webkit-text-security: initial;
+      -webkit-text-stroke: 0.001px transparent;
+      -webkit-user-drag: initial;
+      white-space-collapse: initial;
+      widows: initial;
+      width: initial;
+      will-change: initial;
+      word-break: initial;
+      word-spacing: initial;
+      x: initial;
+      y: initial;
+      z-index: initial;
+    }
+
+    @media (prefers-color-scheme: light) {
+      .fNcSQw {
+        --ck-connectbutton-font-size: 15px;
+        --ck-connectbutton-color: #373737;
+        --ck-connectbutton-background: #F6F7F9;
+        --ck-connectbutton-background-secondary: #FFFFFF;
+        --ck-connectbutton-hover-color: #373737;
+        --ck-connectbutton-hover-background: #F0F2F5;
+        --ck-connectbutton-active-color: #373737;
+        --ck-connectbutton-active-background: #EAECF1;
+        --ck-connectbutton-balance-color: #373737;
+        --ck-connectbutton-balance-background: #fff;
+        --ck-connectbutton-balance-box-shadow: inset 0 0 0 1px var(--ck-connectbutton-background);
+        --ck-connectbutton-balance-hover-background: #F6F7F9;
+        --ck-connectbutton-balance-hover-box-shadow: inset 0 0 0 1px var(--ck-connectbutton-hover-background);
+        --ck-connectbutton-balance-active-background: #F0F2F5;
+        --ck-connectbutton-balance-active-box-shadow: inset 0 0 0 1px var(--ck-connectbutton-active-background);
+        --ck-primary-button-border-radius: 16px;
+        --ck-primary-button-color: #373737;
+        --ck-primary-button-background: #F6F7F9;
+        --ck-primary-button-font-weight: 600;
+        --ck-primary-button-hover-color: #373737;
+        --ck-primary-button-hover-background: #F0F2F5;
+        --ck-secondary-button-border-radius: 16px;
+        --ck-secondary-button-color: #373737;
+        --ck-secondary-button-background: #F6F7F9;
+        --ck-tertiary-button-background: #FFFFFF;
+        --ck-secondary-button-hover-background: #e0e4eb;
+        --ck-modal-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.02);
+        --ck-overlay-background: rgba(71, 88, 107, 0.24);
+        --ck-body-color: #373737;
+        --ck-body-color-muted: #999999;
+        --ck-body-color-muted-hover: #111111;
+        --ck-body-background: #ffffff;
+        --ck-body-background-transparent: rgba(255, 255, 255, 0);
+        --ck-body-background-secondary: #f6f7f9;
+        --ck-body-background-secondary-hover-background: #e0e4eb;
+        --ck-body-background-secondary-hover-outline: #4282FF;
+        --ck-body-background-tertiary: #F3F4F7;
+        --ck-body-action-color: #999999;
+        --ck-body-divider: #f7f6f8;
+        --ck-body-divider-secondary: rgba(0, 0, 0, 0.06);
+        --ck-body-color-danger: #FF4E4E;
+        --ck-body-color-valid: #32D74B;
+        --ck-siwe-border: #F0F0F0;
+        --ck-body-disclaimer-color: #AAAAAB;
+        --ck-body-disclaimer-link-color: #838485;
+        --ck-body-disclaimer-link-hover-color: #000000;
+        --ck-tooltip-background: #ffffff;
+        --ck-tooltip-background-secondary: #ffffff;
+        --ck-tooltip-color: #999999;
+        --ck-tooltip-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+        --ck-dropdown-button-color: #999999;
+        --ck-dropdown-button-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01), 0px 0px 7px rgba(0, 0, 0, 0.05);
+        --ck-dropdown-button-background: #fff;
+        --ck-dropdown-button-hover-color: #8B8B8B;
+        --ck-dropdown-button-hover-background: #F5F7F9;
+        --ck-qr-dot-color: #000000;
+        --ck-qr-border-color: #f7f6f8;
+        --ck-focus-color: #1A88F8;
+        --ck-spinner-color: var(--ck-focus-color);
+        --ck-copytoclipboard-stroke: #CCCCCC;
+      }
+
+      @supports (color:color(display-p3 1 1 1)) {
+        .fNcSQw {
+          --ck-connectbutton-font-size: 15px;
+          --ck-connectbutton-color: color(display-p3 0.21568627450980393 0.21568627450980393 0.21568627450980393);
+          --ck-connectbutton-background: color(display-p3 0.9647058823529412 0.9686274509803922 0.9764705882352941);
+          --ck-connectbutton-background-secondary: color(display-p3 1 1 1);
+          --ck-connectbutton-hover-color: color(display-p3 0.21568627450980393 0.21568627450980393 0.21568627450980393);
+          --ck-connectbutton-hover-background: color(display-p3 0.9411764705882353 0.9490196078431372 0.9607843137254902);
+          --ck-connectbutton-active-color: color(display-p3 0.21568627450980393 0.21568627450980393 0.21568627450980393);
+          --ck-connectbutton-active-background: color(display-p3 0.9176470588235294 0.9254901960784314 0.9450980392156862);
+          --ck-connectbutton-balance-color: color(display-p3 0.21568627450980393 0.21568627450980393 0.21568627450980393);
+          --ck-connectbutton-balance-background: #fff;
+          --ck-connectbutton-balance-box-shadow: inset 0 0 0 1px var(--ck-connectbutton-background);
+          --ck-connectbutton-balance-hover-background: color(display-p3 0.9647058823529412 0.9686274509803922 0.9764705882352941);
+          --ck-connectbutton-balance-hover-box-shadow: inset 0 0 0 1px var(--ck-connectbutton-hover-background);
+          --ck-connectbutton-balance-active-background: color(display-p3 0.9411764705882353 0.9490196078431372 0.9607843137254902);
+          --ck-connectbutton-balance-active-box-shadow: inset 0 0 0 1px var(--ck-connectbutton-active-background);
+          --ck-primary-button-border-radius: 16px;
+          --ck-primary-button-color: color(display-p3 0.21568627450980393 0.21568627450980393 0.21568627450980393);
+          --ck-primary-button-background: color(display-p3 0.9647058823529412 0.9686274509803922 0.9764705882352941);
+          --ck-primary-button-font-weight: 600;
+          --ck-primary-button-hover-color: color(display-p3 0.21568627450980393 0.21568627450980393 0.21568627450980393);
+          --ck-primary-button-hover-background: color(display-p3 0.9411764705882353 0.9490196078431372 0.9607843137254902);
+          --ck-secondary-button-border-radius: 16px;
+          --ck-secondary-button-color: color(display-p3 0.21568627450980393 0.21568627450980393 0.21568627450980393);
+          --ck-secondary-button-background: color(display-p3 0.9647058823529412 0.9686274509803922 0.9764705882352941);
+          --ck-tertiary-button-background: color(display-p3 1 1 1);
+          --ck-secondary-button-hover-background: color(display-p3 0.8784313725490196 0.8941176470588236 0.9215686274509803);
+          --ck-modal-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.02);
+          --ck-overlay-background: rgba(71, 88, 107, 0.24);
+          --ck-body-color: color(display-p3 0.21568627450980393 0.21568627450980393 0.21568627450980393);
+          --ck-body-color-muted: color(display-p3 0.6 0.6 0.6);
+          --ck-body-color-muted-hover: color(display-p3 0.06666666666666667 0.06666666666666667 0.06666666666666667);
+          --ck-body-background: color(display-p3 1 1 1);
+          --ck-body-background-transparent: rgba(255, 255, 255, 0);
+          --ck-body-background-secondary: color(display-p3 0.9647058823529412 0.9686274509803922 0.9764705882352941);
+          --ck-body-background-secondary-hover-background: color(display-p3 0.8784313725490196 0.8941176470588236 0.9215686274509803);
+          --ck-body-background-secondary-hover-outline: color(display-p3 0.25882352941176473 0.5098039215686274 1);
+          --ck-body-background-tertiary: color(display-p3 0.9529411764705882 0.9568627450980393 0.9686274509803922);
+          --ck-body-action-color: color(display-p3 0.6 0.6 0.6);
+          --ck-body-divider: color(display-p3 0.9686274509803922 0.9647058823529412 0.9725490196078431);
+          --ck-body-divider-secondary: rgba(0, 0, 0, 0.06);
+          --ck-body-color-danger: color(display-p3 1 0.3058823529411765 0.3058823529411765);
+          --ck-body-color-valid: color(display-p3 0.19607843137254902 0.8431372549019608 0.29411764705882354);
+          --ck-siwe-border: color(display-p3 0.9411764705882353 0.9411764705882353 0.9411764705882353);
+          --ck-body-disclaimer-color: color(display-p3 0.6666666666666666 0.6666666666666666 0.6705882352941176);
+          --ck-body-disclaimer-link-color: color(display-p3 0.5137254901960784 0.5176470588235295 0.5215686274509804);
+          --ck-body-disclaimer-link-hover-color: color(display-p3 0 0 0);
+          --ck-tooltip-background: color(display-p3 1 1 1);
+          --ck-tooltip-background-secondary: color(display-p3 1 1 1);
+          --ck-tooltip-color: color(display-p3 0.6 0.6 0.6);
+          --ck-tooltip-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+          --ck-dropdown-button-color: color(display-p3 0.6 0.6 0.6);
+          --ck-dropdown-button-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01), 0px 0px 7px rgba(0, 0, 0, 0.05);
+          --ck-dropdown-button-background: #fff;
+          --ck-dropdown-button-hover-color: color(display-p3 0.5450980392156862 0.5450980392156862 0.5450980392156862);
+          --ck-dropdown-button-hover-background: color(display-p3 0.9607843137254902 0.9686274509803922 0.9764705882352941);
+          --ck-qr-dot-color: color(display-p3 0 0 0);
+          --ck-qr-border-color: color(display-p3 0.9686274509803922 0.9647058823529412 0.9725490196078431);
+          --ck-focus-color: color(display-p3 0.10196078431372549 0.5333333333333333 0.9725490196078431);
+          --ck-spinner-color: var(--ck-focus-color);
+          --ck-copytoclipboard-stroke: color(display-p3 0.8 0.8 0.8);
+        }
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .fNcSQw {
+        --ck-connectbutton-font-size: 15px;
+        --ck-connectbutton-color: #ffffff;
+        --ck-connectbutton-background: #383838;
+        --ck-connectbutton-background-secondary: #282828;
+        --ck-connectbutton-hover-background: #404040;
+        --ck-connectbutton-active-background: #4D4D4D;
+        --ck-connectbutton-balance-color: #fff;
+        --ck-connectbutton-balance-background: #282828;
+        --ck-connectbutton-balance-box-shadow: inset 0 0 0 1px var(--ck-connectbutton-background);
+        --ck-connectbutton-balance-hover-background: #383838;
+        --ck-connectbutton-balance-hover-box-shadow: inset 0 0 0 1px var(--ck-connectbutton-hover-background);
+        --ck-connectbutton-balance-active-background: #404040;
+        --ck-connectbutton-balance-active-box-shadow: inset 0 0 0 1px var(--ck-connectbutton-active-background);
+        --ck-primary-button-color: #ffffff;
+        --ck-primary-button-background: #383838;
+        --ck-primary-button-border-radius: 16px;
+        --ck-primary-button-font-weight: 600;
+        --ck-primary-button-hover-background: #404040;
+        --ck-primary-button-active-border-radius: 16px;
+        --ck-secondary-button-color: #ffffff;
+        --ck-secondary-button-background: #333333;
+        --ck-secondary-button-hover-background: #4D4D4D;
+        --ck-tertiary-button-background: #424242;
+        --ck-focus-color: #1A88F8;
+        --ck-overlay-background: rgba(0, 0, 0, 0.4);
+        --ck-body-color: #ffffff;
+        --ck-body-color-muted: rgba(255, 255, 255, 0.4);
+        --ck-body-color-muted-hover: rgba(255, 255, 255, 0.8);
+        --ck-body-background: #2B2B2B;
+        --ck-body-background-transparent: rgba(0, 0, 0, 0);
+        --ck-body-background-secondary: #333333;
+        --ck-body-background-secondary-hover-background: #4D4D4D;
+        --ck-body-background-secondary-hover-outline: #ffffff;
+        --ck-body-background-tertiary: #333333;
+        --ck-body-action-color: #808080;
+        --ck-body-divider: #383838;
+        --ck-body-color-danger: #FF4E4E;
+        --ck-body-disclaimer-color: #858585;
+        --ck-body-disclaimer-link-color: #ADADAD;
+        --ck-body-disclaimer-link-hover-color: #FFFFFF;
+        --ck-modal-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.02);
+        --ck-copytoclipboard-stroke: #555555;
+        --ck-tooltip-background: #2B2B2B;
+        --ck-tooltip-background-secondary: #333333;
+        --ck-tooltip-color: #999999;
+        --ck-tooltip-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+        --ck-dropdown-button-color: #6C7381;
+        --ck-spinner-color: var(--ck-focus-color);
+        --ck-qr-dot-color: #ffffff;
+        --ck-qr-border-color: #3d3d3d;
+      }
+
+      @supports (color:color(display-p3 1 1 1)) {
+        .fNcSQw {
+          --ck-connectbutton-font-size: 15px;
+          --ck-connectbutton-color: color(display-p3 1 1 1);
+          --ck-connectbutton-background: color(display-p3 0.2196078431372549 0.2196078431372549 0.2196078431372549);
+          --ck-connectbutton-background-secondary: color(display-p3 0.1568627450980392 0.1568627450980392 0.1568627450980392);
+          --ck-connectbutton-hover-background: color(display-p3 0.25098039215686274 0.25098039215686274 0.25098039215686274);
+          --ck-connectbutton-active-background: color(display-p3 0.30196078431372547 0.30196078431372547 0.30196078431372547);
+          --ck-connectbutton-balance-color: #fff;
+          --ck-connectbutton-balance-background: color(display-p3 0.1568627450980392 0.1568627450980392 0.1568627450980392);
+          --ck-connectbutton-balance-box-shadow: inset 0 0 0 1px var(--ck-connectbutton-background);
+          --ck-connectbutton-balance-hover-background: color(display-p3 0.2196078431372549 0.2196078431372549 0.2196078431372549);
+          --ck-connectbutton-balance-hover-box-shadow: inset 0 0 0 1px var(--ck-connectbutton-hover-background);
+          --ck-connectbutton-balance-active-background: color(display-p3 0.25098039215686274 0.25098039215686274 0.25098039215686274);
+          --ck-connectbutton-balance-active-box-shadow: inset 0 0 0 1px var(--ck-connectbutton-active-background);
+          --ck-primary-button-color: color(display-p3 1 1 1);
+          --ck-primary-button-background: color(display-p3 0.2196078431372549 0.2196078431372549 0.2196078431372549);
+          --ck-primary-button-border-radius: 16px;
+          --ck-primary-button-font-weight: 600;
+          --ck-primary-button-hover-background: color(display-p3 0.25098039215686274 0.25098039215686274 0.25098039215686274);
+          --ck-primary-button-active-border-radius: 16px;
+          --ck-secondary-button-color: color(display-p3 1 1 1);
+          --ck-secondary-button-background: color(display-p3 0.2 0.2 0.2);
+          --ck-secondary-button-hover-background: color(display-p3 0.30196078431372547 0.30196078431372547 0.30196078431372547);
+          --ck-tertiary-button-background: color(display-p3 0.25882352941176473 0.25882352941176473 0.25882352941176473);
+          --ck-focus-color: color(display-p3 0.10196078431372549 0.5333333333333333 0.9725490196078431);
+          --ck-overlay-background: rgba(0, 0, 0, 0.4);
+          --ck-body-color: color(display-p3 1 1 1);
+          --ck-body-color-muted: rgba(255, 255, 255, 0.4);
+          --ck-body-color-muted-hover: rgba(255, 255, 255, 0.8);
+          --ck-body-background: color(display-p3 0.16862745098039217 0.16862745098039217 0.16862745098039217);
+          --ck-body-background-transparent: rgba(0, 0, 0, 0);
+          --ck-body-background-secondary: color(display-p3 0.2 0.2 0.2);
+          --ck-body-background-secondary-hover-background: color(display-p3 0.30196078431372547 0.30196078431372547 0.30196078431372547);
+          --ck-body-background-secondary-hover-outline: color(display-p3 1 1 1);
+          --ck-body-background-tertiary: color(display-p3 0.2 0.2 0.2);
+          --ck-body-action-color: color(display-p3 0.5019607843137255 0.5019607843137255 0.5019607843137255);
+          --ck-body-divider: color(display-p3 0.2196078431372549 0.2196078431372549 0.2196078431372549);
+          --ck-body-color-danger: color(display-p3 1 0.3058823529411765 0.3058823529411765);
+          --ck-body-disclaimer-color: color(display-p3 0.5215686274509804 0.5215686274509804 0.5215686274509804);
+          --ck-body-disclaimer-link-color: color(display-p3 0.6784313725490196 0.6784313725490196 0.6784313725490196);
+          --ck-body-disclaimer-link-hover-color: color(display-p3 1 1 1);
+          --ck-modal-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.02);
+          --ck-copytoclipboard-stroke: color(display-p3 0.3333333333333333 0.3333333333333333 0.3333333333333333);
+          --ck-tooltip-background: color(display-p3 0.16862745098039217 0.16862745098039217 0.16862745098039217);
+          --ck-tooltip-background-secondary: color(display-p3 0.2 0.2 0.2);
+          --ck-tooltip-color: color(display-p3 0.6 0.6 0.6);
+          --ck-tooltip-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+          --ck-dropdown-button-color: color(display-p3 0.4235294117647059 0.45098039215686275 0.5058823529411764);
+          --ck-spinner-color: var(--ck-focus-color);
+          --ck-qr-dot-color: color(display-p3 1 1 1);
+          --ck-qr-border-color: color(display-p3 0.23921568627450981 0.23921568627450981 0.23921568627450981);
+        }
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .fNcSQw {
+        --ck-family-brand: #1A88F8;
+        --ck-brand-walletConnect: #3B99FC;
+        --ck-brand-coinbaseWallet: #0052FF;
+        --ck-brand-metamask: #f6851b;
+        --ck-brand-metamask-01: #F6851B;
+        --ck-brand-metamask-02: #E2761B;
+        --ck-brand-metamask-03: #CD6116;
+        --ck-brand-metamask-04: #161616;
+        --ck-brand-metamask-05: #763D16;
+        --ck-brand-metamask-06: #D7C1B3;
+        --ck-brand-metamask-07: #C0AD9E;
+        --ck-brand-metamask-08: #E4761B;
+        --ck-brand-metamask-09: #233447;
+        --ck-brand-metamask-10: #E4751F;
+        --ck-brand-metamask-11: #FEF5E7;
+        --ck-brand-metamask-12: #E3C8AB;
+        --ck-brand-trust-01: #3375BB;
+        --ck-brand-trust-02: #ffffff;
+        --ck-brand-trust-01b: #ffffff;
+        --ck-brand-trust-02b: #3375BB;
+        --ck-brand-argent: #f36a3d;
+        --ck-brand-imtoken-01: #11C4D1;
+        --ck-brand-imtoken-02: #0062AD;
+        --ck-brand-safe: #12FF80;
+        --ck-brand-dawn: #000000;
+        --ck-ens-01-start: #FF453A;
+        --ck-ens-01-stop: #FF9F0A;
+        --ck-ens-02-start: #FF9F0A;
+        --ck-ens-02-stop: #FFD60A;
+        --ck-ens-03-start: #FFD60A;
+        --ck-ens-03-stop: #32D74B;
+        --ck-ens-04-start: #32D74B;
+        --ck-ens-04-stop: #64D2FF;
+        --ck-ens-05-start: #64D2FF;
+        --ck-ens-05-stop: #0A84FF;
+        --ck-ens-06-start: #0A84FF;
+        --ck-ens-06-stop: #5E5CE6;
+        --ck-ens-07-start: #5E5CE6;
+        --ck-ens-07-stop: #BF5AF2;
+        --ck-ens-08-start: #BF5AF2;
+        --ck-ens-08-stop: #FF2D55;
+        --ck-graphic-wave-stop-01: #E8F17D;
+        --ck-graphic-wave-stop-02: #A8ECDE;
+        --ck-graphic-wave-stop-03: #7AA1F2;
+        --ck-graphic-wave-stop-04: #DEA1E8;
+        --ck-graphic-wave-stop-05: #F46D98;
+        --ck-graphic-scaniconwithlogos-01: #AFAFAF;
+        --ck-graphic-scaniconwithlogos-02: #696969;
+        --ck-graphic-scaniconwithlogos-03: #F8D74A;
+        --ck-graphic-scaniconwithlogos-04: #3D3D3D;
+      }
+    }
+
+    @supports (color:color(display-p3 1 1 1)) {}
+
+    .fNcSQw button {
+      text-rendering: optimizelegibility;
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-text-stroke: 0.001px transparent;
+    }
+
+    .fNcSQw,
+    .fNcSQw * {
+      font-family: var(--ck-font-family);
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+    }
+
+    .fNcSQw img,
+    .fNcSQw svg {
+      max-width: 100%;
+    }
+
+    .fNcSQw strong {
+      font-weight: 600;
+    }
+
+    .fNcSQw a:focus-visible,
+    .fNcSQw button:focus-visible {
+      outline: 2px solid var(--ck-focus-color);
+    }
+
+    .bPnopJ {
+      max-width: 100%;
+      width: 295px;
+      padding-top: 48px;
+    }
+
+    .ehIVyd {
+      z-index: 3;
+      pointer-events: none;
+      user-select: none;
+      position: absolute;
+      top: 25px;
+      left: 50%;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      height: 26px;
+      transform: translateX(-50%);
+      width: var(--width);
+      text-align: center;
+      font-size: 17px;
+      line-height: 20px;
+      font-weight: var(--ck-modal-heading-font-weight, 600);
+      color: var(--ck-body-color);
+    }
+
+    .ehIVyd span {
+      display: inline-block;
+    }
+
+    .kfYYfk {
+      position: relative;
+      padding: 0px;
+    }
+
+    .fFEodf {
+      left: 0px;
+      right: 0px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 0px 0px 16px;
+    }
+
+    @media only screen and (max-width: 560px) {
+      .fFEodf {
+        display: block;
+      }
+    }
+
+    .dUdsTt {
+      margin: 0px;
+      padding: 0px;
+      line-height: 22px;
+      font-size: 19px;
+      font-weight: var(--ck-modal-h1-font-weight, 600);
+      color: var(--ck-body-color);
+    }
+
+    .dUdsTt>svg {
+      position: relative;
+      top: -2px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    @media only screen and (max-width: 560px) {
+      .dUdsTt {
+        margin-bottom: 6px;
+        font-size: 17px;
+      }
+    }
+
+    .hhsVXD {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 21px;
+      color: var(--ck-body-color-muted);
+    }
+
+    .hhsVXD strong {
+      font-weight: 500;
+      color: var(--ck-body-color);
+    }
+
+    .jXJXoi {
+      z-index: 1;
+      position: absolute;
+      inset: 0px;
+      background: var(--ck-overlay-background, rgba(71, 88, 107, 0.24));
+      backdrop-filter: var(--ck-overlay-backdrop-filter, none);
+      opacity: 0;
+      animation: 150ms ease-out 0s 1 normal both running kyfoBh;
+    }
+
+    .drtgBc {
+      z-index: 1;
+      position: absolute;
+      inset: 0px;
+      background: var(--ck-overlay-background, rgba(71, 88, 107, 0.24));
+      backdrop-filter: var(--ck-overlay-backdrop-filter, none);
+      opacity: 0;
+      animation: 150ms ease-out 0s 1 normal both running ljotTV;
+    }
+
+    .bJrNkN {
+      z-index: 2;
+      position: relative;
+      color: var(--ck-body-color);
+      animation: 150ms ease 0s 1 normal both running gcvaBM;
+    }
+
+    .bJrNkN.active {
+      animation-name: jtPyxw;
+    }
+
+    .bJrNkN::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      left: 50%;
+      width: var(--width);
+      height: var(--height);
+      transform: translateX(-50%);
+      backface-visibility: hidden;
+      transition: 200ms;
+      border-radius: var(--ck-border-radius, 20px);
+      background: var(--ck-body-background);
+      box-shadow: var(--ck-modal-box-shadow);
+    }
+
+    @media only screen and (max-width: 560px) {
+      .bJrNkN {
+        animation-name: gYgSRh;
+        animation-duration: 130ms;
+        animation-timing-function: ease;
+      }
+
+      .bJrNkN.active {
+        animation-name: dUzAuZ;
+        animation-duration: 300ms;
+        animation-delay: 32ms;
+        animation-timing-function: cubic-bezier(0.15, 1.15, 0.6, 1);
+      }
+
+      .bJrNkN::before {
+        width: 100%;
+        transition: height cubic-bezier(0.15, 1.15, 0.6, 1);
+        will-change: height;
+      }
+    }
+
+    .iDqZJR {
+      z-index: 3;
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      height: 64px;
+      transform: translateX(-50%);
+      backface-visibility: hidden;
+      width: var(--width);
+      transition: width 0.2s;
+      pointer-events: auto;
+    }
+
+    .jUrJtg {
+      position: relative;
+      overflow: hidden;
+      height: var(--height);
+      transition: height 0.2s;
+    }
+
+    @media only screen and (max-width: 560px) {
+      .jUrJtg {
+        transition: height cubic-bezier(0.15, 1.15, 0.6, 1);
+      }
+    }
+
+    .dJpxXv {
+      z-index: 2;
+      position: relative;
+      top: 0px;
+      left: 50%;
+      margin-left: calc(var(--width) / -2);
+      width: var(--width);
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+      transform-origin: center center;
+      animation: 200ms ease 0s 1 normal both running none;
+    }
+
+    .dJpxXv.active {
+      animation-name: dwEkmm;
+    }
+
+    .dJpxXv.active-scale-up {
+      animation-name: klHVvn;
+    }
+
+    .dJpxXv.exit-scale-down {
+      z-index: 1;
+      pointer-events: none;
+      position: absolute;
+      animation-name: ebeUMj;
+    }
+
+    .dJpxXv.exit {
+      z-index: 1;
+      pointer-events: none;
+      position: absolute;
+      animation-name: gBjDwu;
+      animation-delay: 16.6667ms;
+    }
+
+    @media only screen and (max-width: 560px) {
+      .dJpxXv {
+        animation: 0ms cubic-bezier(0.15, 1.15, 0.6, 1) 0s 1 normal both running none;
+      }
+
+      .dJpxXv.active {
+        animation-name: kyfoBh;
+      }
+
+      .dJpxXv.active-scale-up {
+        animation-name: kyfoBh;
+      }
+
+      .dJpxXv.exit-scale-down {
+        z-index: 3;
+        animation-name: ljotTV;
+      }
+
+      .dJpxXv.exit {
+        z-index: 3;
+        animation-name: ljotTV;
+        animation-delay: 0ms;
+      }
+    }
+
+    .jRkBEe {
+      margin: 0px auto;
+      width: fit-content;
+      padding: 29px 24px 24px;
+      backface-visibility: hidden;
+    }
+
+    .eaUSXJ {
+      z-index: 2147483646;
+      position: fixed;
+      inset: 0px;
+    }
+
+    .bBsndr {
+      z-index: 3;
+      cursor: pointer;
+      position: absolute;
+      top: 22px;
+      right: 17px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      border-radius: 16px;
+      padding: 0px;
+      margin: 0px;
+      color: var(--ck-body-action-color);
+      background: var(--ck-body-background);
+      transition: background-color 200ms, transform 100ms;
+    }
+
+    .bBsndr svg {
+      display: block;
+    }
+
+    .bBsndr:hover {
+      background: var(--ck-body-background-secondary);
+    }
+
+    .bBsndr:active {
+      transform: scale(0.9);
+    }
+
+    .fXUTsq {
+      z-index: 3;
+      position: absolute;
+      inset: 0px;
+      width: 100%;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      border-radius: 16px;
+      padding: 0px;
+      margin: 0px;
+      color: var(--ck-body-action-color);
+      background: var(--ck-body-background);
+      transition: background-color 200ms, transform 100ms;
+    }
+
+    .fXUTsq svg {
+      display: block;
+      position: relative;
+      left: -1px;
+    }
+
+    .fXUTsq:enabled {
+      cursor: pointer;
+    }
+
+    .fXUTsq:enabled:hover {
+      background: var(--ck-body-background-secondary);
+    }
+
+    .fXUTsq:enabled:active {
+      transform: scale(0.9);
+    }
+
+    .kTlFiz {
+      z-index: 3;
+      position: absolute;
+      inset: 0px;
+      width: 100%;
+      transform: translateX(-1px);
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      border-radius: 16px;
+      padding: 0px;
+      margin: 0px;
+      color: var(--ck-body-action-color);
+      background: var(--ck-body-background);
+      transition: background-color 200ms, transform 100ms;
+    }
+
+    .kTlFiz svg {
+      display: block;
+      position: relative;
+    }
+
+    .kTlFiz:enabled {
+      cursor: pointer;
+    }
+
+    .kTlFiz:enabled:hover {
+      background: var(--ck-body-background-secondary);
+    }
+
+    .kTlFiz:enabled:active {
+      transform: scale(0.9);
+    }
+
+    .cMtGuS {
+      --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+      --duration: 200ms;
+      --transition: height var(--duration) var(--ease), width var(--duration) var(--ease);
+      z-index: 3;
+      display: block;
+      pointer-events: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 100%;
+      transform: translate3d(-50%, -50%, 0px);
+      backface-visibility: hidden;
+    }
+
+    @media only screen and (max-width: 560px) {
+      .cMtGuS {
+        pointer-events: auto;
+        left: 0px;
+        top: auto;
+        bottom: -5px;
+        transform: none;
+      }
+
+      .cMtGuS .sc-kpDqfm {
+        max-width: 448px;
+        margin: 0px auto;
+      }
+
+      .cMtGuS .sc-kpDqfm::before {
+        width: 100%;
+        border-radius: var(--ck-border-radius, 30px) var(--ck-border-radius, 30px) 0 0;
+      }
+
+      .cMtGuS .sc-cwHptR {
+        left: 0px;
+        right: 0px;
+        margin: 0px auto;
+        width: auto;
+      }
+
+      .cMtGuS .sc-eqUAAy {
+        margin: 0px auto;
+        width: 100% !important;
+      }
+
+      .cMtGuS .sc-dcJsrY {
+        top: 29px;
+      }
+
+      .cMtGuS .sc-gsFSXq {
+        gap: 12px;
+      }
+
+      .cMtGuS .sc-imWYAI {
+        margin: 0px auto;
+        max-width: 295px;
+      }
+
+      .cMtGuS .sc-jEACwC {
+        width: 100%;
+        padding: 31px 24px;
+      }
+
+      .cMtGuS .sc-dAlyuH {
+        width: 100%;
+        top: 4px;
+        border-bottom: 0px;
+      }
+
+      .cMtGuS .sc-dLMFU {
+        right: 22px;
+      }
+
+      .cMtGuS .sc-eldPxv {
+        top: -1px;
+        left: -3px;
+      }
+
+      .cMtGuS .sc-fPXMVe {
+        top: -1px;
+        left: -3px;
+      }
+
+      .cMtGuS .sc-fPXMVe svg {
+        width: 65%;
+        height: auto;
+      }
+
+      .cMtGuS .sc-dLMFU,
+      .cMtGuS .sc-eldPxv,
+      .cMtGuS .sc-fPXMVe {
+        transform: scale(1.4) !important;
+        background: transparent !important;
+      }
+
+      .cMtGuS .sc-dLMFU svg,
+      .cMtGuS .sc-eldPxv svg,
+      .cMtGuS .sc-fPXMVe svg {
+        transform: scale(0.8) !important;
+      }
+    }
+
+    .gfGUZM {
+      text-align: center;
+      margin-top: 16px;
+      margin-bottom: -6px;
+    }
+
+    .kYCQAJ {
+      appearance: none;
+      user-select: none;
+      cursor: pointer;
+      display: inline-flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      gap: 10px;
+      height: 42px;
+      padding: 0px 16px;
+      border-radius: 6px;
+      background: none;
+      color: var(--ck-body-color-muted);
+      font-size: 15px;
+      line-height: 18px;
+      font-weight: 500;
+      transition: color 200ms, transform 100ms;
+    }
+
+    .kYCQAJ svg {
+      transition: 100ms ease-out;
+      display: block;
+      position: relative;
+      top: 2px;
+      left: 2px;
+      transform: translateZ(0px);
+    }
+
+    .kYCQAJ svg path,
+    .kYCQAJ svg circle {
+      transition: 100ms ease-out;
+    }
+
+    .kYCQAJ svg path:last-of-type {
+      transform-origin: 0px 0px;
+      transform: scaleX(1.3) skewY(-12deg);
+      opacity: 0;
+    }
+
+    .kYCQAJ svg circle {
+      transform: translate(20%, -15%);
+    }
+
+    .kYCQAJ:hover {
+      color: var(--ck-body-color-muted-hover);
+    }
+
+    .kYCQAJ:hover svg path,
+    .kYCQAJ:hover svg circle {
+      opacity: 1;
+      transform: none;
+    }
+
+    .kYCQAJ:active {
+      transform: scale(0.96);
+    }
+
+    .cUEhtP {
+      display: block;
+      text-decoration: none;
+    }
+
+    .bvqaNJ {
+      transition: opacity 300ms;
+      min-width: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .bvqaNJ .sc-hIUJlX {
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      padding: 0px 20px;
+      width: 100%;
+      height: 64px;
+      font-size: 17px;
+      font-weight: var(--ck-primary-button-font-weight, 500);
+      line-height: 20px;
+      text-align: var(--ck-body-button-text-align, left);
+      transition: background 180ms, color, box-shadow, transform, opacity;
+      will-change: transform, box-shadow, background-color, color, opacity;
+      --fallback-color: var(--ck-primary-button-color);
+      --fallback-background: var(--ck-primary-button-background);
+      --fallback-box-shadow: var(--ck-primary-button-box-shadow);
+      --fallback-border-radius: var(--ck-primary-button-border-radius);
+      --color: var(--ck-primary-button-color, var(--fallback-color));
+      --background: var(--ck-primary-button-background, var(--fallback-background));
+      --box-shadow: var(--ck-primary-button-box-shadow, var(--fallback-box-shadow));
+      --border-radius: var(--ck-primary-button-border-radius, var(--fallback-border-radius));
+      --hover-color: var(--ck-primary-button-hover-color, var(--color));
+      --hover-background: var(--ck-primary-button-hover-background, var(--background));
+      --hover-box-shadow: var(--ck-primary-button-hover-box-shadow, var(--box-shadow));
+      --hover-border-radius: var(--ck-primary-button-hover-border-radius, var(--border-radius));
+      --active-color: var(--ck-primary-button-active-color, var(--hover-color));
+      --active-background: var(--ck-primary-button-active-background, var(--hover-background));
+      --active-box-shadow: var(--ck-primary-button-active-box-shadow, var(--hover-box-shadow));
+      --active-border-radius: var(--ck-primary-button-active-border-radius, var(--hover-border-radius));
+      color: var(--color);
+      background: var(--background);
+      box-shadow: var(--box-shadow);
+      border-radius: var(--border-radius);
+      --bg: var(--background);
+    }
+
+    .bvqaNJ .sc-hIUJlX:disabled {
+      transition: 180ms;
+      opacity: 0.4;
+    }
+
+    .bvqaNJ .sc-hIUJlX:not(:disabled):hover {
+      color: var(--hover-color);
+      background: var(--hover-background);
+      box-shadow: var(--hover-box-shadow);
+      border-radius: var(--hover-border-radius);
+      --bg: var(--hover-background, var(--background));
+    }
+
+    .bvqaNJ .sc-hIUJlX:not(:disabled):focus-visible {
+      transition-duration: 100ms;
+      color: var(--hover-color);
+      background: var(--hover-background);
+      box-shadow: var(--hover-box-shadow);
+      border-radius: var(--hover-border-radius);
+      --bg: var(--hover-background, var(--background));
+    }
+
+    .bvqaNJ .sc-hIUJlX:not(:disabled):active {
+      color: var(--active-color);
+      background: var(--active-background);
+      box-shadow: var(--active-box-shadow);
+      border-radius: var(--active-border-radius);
+      --bg: var(--active-background, var(--background));
+    }
+
+    .bvqaNJ .sc-hIUJlX .sc-jnOGJG {
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      gap: 9px;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding: 2px 38px 2px 0px;
+    }
+
+    .bvqaNJ .sc-hIUJlX .sc-dZoequ {
+      position: absolute;
+      right: 20px;
+      width: 32px;
+      height: 32px;
+      overflow: hidden;
+    }
+
+    .bvqaNJ .sc-hIUJlX .sc-dZoequ svg,
+    .bvqaNJ .sc-hIUJlX .sc-dZoequ img {
+      display: block;
+      position: relative;
+      pointer-events: none;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+    }
+
+    .bvqaNJ .sc-hIUJlX .sc-dZoequ[data-shape="squircle"] {
+      border-radius: 22.5%;
+    }
+
+    .bvqaNJ .sc-hIUJlX .sc-dZoequ[data-shape="circle"] {
+      border-radius: 100%;
+    }
+
+    .bvqaNJ .sc-hIUJlX .sc-dZoequ[data-shape="square"] {
+      border-radius: 0px;
+    }
+
+    .ijNYez {
+      position: relative;
+    }
+
+    .hKrppF {
+      z-index: 9;
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      bottom: 0.75rem;
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+      transition: opacity 300ms;
+    }
+
+    .hKrppF span {
+      cursor: pointer;
+      display: inline-flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      gap: 0.25rem;
+      padding: 0.3075rem 0.9375rem 0.375rem;
+      border-radius: 6rem;
+      background: var(--ck-tooltip-background);
+      color: var(--ck-tooltip-color);
+      font-weight: 500;
+      font-size: 0.8125rem;
+      letter-spacing: -0.01rem;
+      box-shadow: var(--ck-tooltip-shadow);
+      animation: 300ms ease 1000ms 1 normal both running iQvLgh;
+      transition: transform 100ms;
+    }
+
+    .hKrppF span:hover {
+      transform: scale(1.02);
+    }
+
+    .hKrppF span:active {
+      transform: scale(0.98);
+    }
+
+    .hKrppF span svg {
+      display: block;
+      transform: translateX(-0.1875rem);
+    }
+
+    .hKrppF.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .benIRu {
+      --bg: var(--ck-body-background);
+      --fade-height: 1px;
+      position: relative;
+      z-index: 1;
+      max-height: 310px;
+      overflow-y: scroll;
+      padding: 0px 10px;
+      margin: calc(var(--fade-height) * -1) -16px 0 -10px;
+    }
+
+    .benIRu::before,
+    .benIRu::after {
+      pointer-events: none;
+      z-index: 10;
+      content: "";
+      display: block;
+      position: sticky;
+      left: 0px;
+      right: 0px;
+      height: var(--fade-height);
+      background: var(--ck-body-divider-secondary, var(--ck-body-divider));
+      box-shadow: var(--ck-body-divider-box-shadow);
+      transition: opacity 300ms;
+    }
+
+    .benIRu::before {
+      top: 0px;
+    }
+
+    .benIRu::after {
+      bottom: 0px;
+    }
+
+    .benIRu.scroll-start::before {
+      opacity: 0;
+    }
+
+    .benIRu.scroll-end::after {
+      opacity: 0;
+    }
+
+    .benIRu::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    .benIRu::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .benIRu::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0);
+      border-radius: 100px;
+    }
+
+    .benIRu:hover::-webkit-scrollbar-thumb {
+      background: var(--ck-body-color-muted);
+    }
+
+    .benIRu::-webkit-scrollbar-thumb:hover {
+      background: var(--ck-body-color-muted-hover);
+    }
+
+    .bVQxqt {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+      left: 0px;
+      right: 0px;
+    }
+
+    .bVQxqt .sc-gsFSXq {
+      padding: 0px 8px 32px;
+      gap: 12px;
+    }
+
+    .cHgUYv {
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      margin: 10px auto 16px;
+      height: 120px;
+    }
+
+    .dSxspx {
+      user-select: none;
+      position: relative;
+      --spinner-error-opacity: 0;
+    }
+
+    .dSxspx::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      opacity: 0;
+      background: var(--ck-body-color-danger);
+    }
+
+    .jxGyPI {
+      z-index: 4;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .jxGyPI svg {
+      z-index: 3;
+      position: relative;
+      display: block;
+    }
+
+    .goWbwi {
+      z-index: 2;
+      position: absolute;
+      overflow: hidden;
+      inset: 6px;
+      border-radius: 24px;
+      background: var(--ck-body-background);
+    }
+
+    .goWbwi svg,
+    .goWbwi img {
+      pointer-events: none;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .gFyyUG {
+      position: absolute;
+      inset: 1px;
+      overflow: hidden;
+    }
+
+    .qoWsK {
+      pointer-events: none;
+      user-select: none;
+      z-index: 1;
+      position: absolute;
+      inset: -25%;
+    }
+
+    .qoWsK::before {
+      content: "";
+      position: absolute;
+      inset: 0px;
+      background: conic-gradient(from -90deg, transparent, transparent, transparent, transparent, transparent, var(--ck-spinner-color));
+      animation: 1200ms linear 0s infinite normal none running rotateSpinner;
+    }
+
+    @-webkit-keyframes rotateSpinner {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes rotateSpinner {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @-webkit-keyframes kyfoBh {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes kyfoBh {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes gcvaBM {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0.97);
+      }
+    }
+
+    @keyframes gcvaBM {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0.97);
+      }
+    }
+
+    @-webkit-keyframes jtPyxw {
+      0% {
+        opacity: 0;
+        transform: scale(0.97);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes jtPyxw {
+      0% {
+        opacity: 0;
+        transform: scale(0.97);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @-webkit-keyframes gYgSRh {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes gYgSRh {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @-webkit-keyframes dUzAuZ {
+      0% {
+        transform: translate3d(0px, 100%, 0px);
+      }
+
+      100% {
+        transform: translate3d(0px, 0%, 0px);
+      }
+    }
+
+    @keyframes dUzAuZ {
+      0% {
+        transform: translate3d(0px, 100%, 0px);
+      }
+
+      100% {
+        transform: translate3d(0px, 0%, 0px);
+      }
+    }
+
+    @-webkit-keyframes dwEkmm {
+      0% {
+        opacity: 0;
+        transform: scale(1.1);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes dwEkmm {
+      0% {
+        opacity: 0;
+        transform: scale(1.1);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @-webkit-keyframes klHVvn {
+      0% {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes klHVvn {
+      0% {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @-webkit-keyframes ebeUMj {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+    }
+
+    @keyframes ebeUMj {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+    }
+
+    @-webkit-keyframes gBjDwu {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(1.1);
+      }
+    }
+
+    @keyframes gBjDwu {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(1.1);
+      }
+    }
+
+    @-webkit-keyframes ljotTV {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes ljotTV {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @-webkit-keyframes iQvLgh {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes iQvLgh {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+  <script
+    data-scrapbook-elem="custom-elements-loader">(function (names) { if (!customElements) { return; } for (const name of names) { customElements.define(name, class CustomElement extends HTMLElement { }); } })(["number-flow-react", "next-route-announcer"])</script>
+</head>
+
+<body class="flex min-h-screen flex-col bg-black text-white font-mono" style="">
+  <div class="mx-auto flex w-full max-w-[1280px] flex-grow flex-col">
+    <header class="py-4 md:mx-4" data-sentry-component="Header" data-sentry-source-file="Header.tsx">
+      <nav class="flex justify-between mx-4">
+        <div class="flex items-center gap-2"><svg width="119" height="24" viewBox="0 0 119 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg" class="h-6 w-auto text-white" data-sentry-element="svg"
+            data-sentry-source-file="Logo.tsx" data-sentry-component="Logo">
+            <path
+              d="M34.974 18.0005H32.142V6.00047H34.974V7.36847C35.79 6.40847 37.038 5.76047 38.574 5.76047V8.44847C38.478 8.42447 38.358 8.42447 38.262 8.42447C36.462 8.42447 34.974 9.69647 34.974 11.5205V18.0005Z"
+              fill="white" data-sentry-element="path" data-sentry-source-file="Logo.tsx"></path>
+            <path
+              d="M39.182 12.0005C39.182 8.47247 41.822 5.76047 45.302 5.76047C48.71 5.76047 51.038 8.25647 51.038 11.8325C51.038 12.2885 50.966 12.7925 50.918 13.2725H41.99C42.47 14.7605 43.814 15.6725 45.59 15.6725C46.742 15.6725 47.846 15.2645 48.566 14.4725L50.366 16.2725C49.214 17.5445 47.534 18.2405 45.566 18.2405C41.942 18.2405 39.182 15.5285 39.182 12.0005ZM45.254 8.30447C43.598 8.30447 42.182 9.40847 41.942 11.0645H48.374C48.134 9.36047 46.862 8.30447 45.254 8.30447Z"
+              fill="white" data-sentry-element="path" data-sentry-source-file="Logo.tsx"></path>
+            <path
+              d="M52.5648 12.0005C52.5648 8.56847 55.0848 5.76047 58.5168 5.76047C60.0288 5.76047 61.4208 6.55247 62.2128 7.48847V6.00047H65.0448V18.0005H62.2128V16.4645C61.4208 17.4485 60.0288 18.2405 58.5168 18.2405C55.0848 18.2405 52.5648 15.4325 52.5648 12.0005ZM58.8048 8.59247C56.9328 8.59247 55.3968 10.1285 55.3968 12.0005C55.3968 13.8725 56.9328 15.4085 58.8048 15.4085C60.6768 15.4085 62.2128 13.8725 62.2128 12.0005C62.2128 10.1285 60.6768 8.59247 58.8048 8.59247Z"
+              fill="white" data-sentry-element="path" data-sentry-source-file="Logo.tsx"></path>
+            <path
+              d="M73.3595 18.2405C69.9275 18.2405 67.1195 15.4325 67.1195 12.0005C67.1195 8.54447 69.9275 5.76047 73.3595 5.76047C75.1355 5.76047 76.7435 6.50447 77.8715 7.70447L75.8795 9.69647C75.2555 9.02447 74.3435 8.59247 73.3595 8.59247C71.4875 8.59247 69.9515 10.1285 69.9515 12.0005C69.9515 13.8725 71.4875 15.4085 73.3595 15.4085C74.3435 15.4085 75.2555 14.9765 75.8795 14.2805L77.8715 16.2965C76.7435 17.4965 75.1355 18.2405 73.3595 18.2405Z"
+              fill="white" data-sentry-element="path" data-sentry-source-file="Logo.tsx"></path>
+            <path
+              d="M78.8304 6.00047H79.9824C80.6064 6.00047 81.0384 5.59247 81.0384 4.96847V2.78447H83.8704V6.00047H86.9184V8.83247H83.8704V13.1285C83.8704 15.0245 84.1584 15.5045 85.3104 15.5045C85.8384 15.5045 86.3184 15.4325 86.9184 15.3125V18.0005C86.3664 18.1445 85.5744 18.2405 84.9264 18.2405C82.1904 18.2405 81.0384 16.9925 81.0384 13.9685V8.83247H78.8304V6.00047Z"
+              fill="white" data-sentry-element="path" data-sentry-source-file="Logo.tsx"></path>
+            <path
+              d="M91.9974 18.0005H89.1654V6.00047H91.9974V18.0005ZM88.9014 2.16047C88.9014 1.24847 89.6454 0.480469 90.5814 0.480469C91.5174 0.480469 92.2614 1.24847 92.2614 2.16047C92.2614 3.09647 91.5174 3.86447 90.5814 3.86447C89.6454 3.86447 88.9014 3.09647 88.9014 2.16047Z"
+              fill="white" data-sentry-element="path" data-sentry-source-file="Logo.tsx"></path>
+            <path
+              d="M98.5824 18.0005L93.5904 6.00047H96.6624L100.166 14.5445L103.646 6.00047H106.718L101.75 18.0005H98.5824Z"
+              fill="white" data-sentry-element="path" data-sentry-source-file="Logo.tsx"></path>
+            <path
+              d="M107.151 12.0005C107.151 8.47247 109.791 5.76047 113.271 5.76047C116.679 5.76047 119.007 8.25647 119.007 11.8325C119.007 12.2885 118.935 12.7925 118.887 13.2725H109.959C110.439 14.7605 111.783 15.6725 113.559 15.6725C114.711 15.6725 115.815 15.2645 116.535 14.4725L118.335 16.2725C117.183 17.5445 115.503 18.2405 113.535 18.2405C109.911 18.2405 107.151 15.5285 107.151 12.0005ZM113.223 8.30447C111.567 8.30447 110.151 9.40847 109.911 11.0645H116.343C116.103 9.36047 114.831 8.30447 113.223 8.30447Z"
+              fill="white" data-sentry-element="path" data-sentry-source-file="Logo.tsx"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+              fill="url(#paint0_linear_1700_3019)" data-sentry-element="path" data-sentry-source-file="Logo.tsx"></path>
+            <path d="M5.25 12.75L12.75 5.25V11.25H18.75L11.25 18.75V12.75H5.25Z" fill="white" data-sentry-element="path"
+              data-sentry-source-file="Logo.tsx"></path>
+            <defs data-sentry-element="defs" data-sentry-source-file="Logo.tsx">
+              <linearGradient id="paint0_linear_1700_3019" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"
+                data-sentry-element="linearGradient" data-sentry-source-file="Logo.tsx">
+                <stop stop-color="#62D0FF" data-sentry-element="stop" data-sentry-source-file="Logo.tsx"></stop>
+                <stop offset="0.5" stop-color="#3C2EFF" data-sentry-element="stop" data-sentry-source-file="Logo.tsx">
+                </stop>
+                <stop offset="1" stop-color="#CBB5FF" data-sentry-element="stop" data-sentry-source-file="Logo.tsx">
+                </stop>
+              </linearGradient>
+            </defs>
+          </svg><span class="interact-button text-xl font-body">| Token Portal</span></div><button data-sentry-component="Address"
+          data-sentry-source-file="HeaderConnectButton.tsx"><span class="text-bland-300"></span><span
+            class="interact-button text-bland-50">[CONNECT]</span></button>
+      </nav>
+    </header>
+    <main class="flex-grow px-4 pt-[10dvh] md:px-8 flex justify-center">
+      <div class="max-w-[512px] w-full" data-sentry-component="SwitchWrapper"
+        data-sentry-source-file="SwitchWrapper.tsx">
+        <div class="interact-button flex justify-center gap-8 text-bland-50/50 mb-4 border-b border-b-bland-50/10 pb-4 w-full"
+          data-sentry-component="SwitchHeader" data-sentry-source-file="SwitchWrapper.tsx"><a
+            class="interact-button uppercase text-white" href="#">//<!-- --> <!-- -->Stake</a><a
+            class="interact-button uppercase" href="#">//<!-- --> <!-- -->Swap</a></div>
+        <h2 class="text-center uppercase text-bland-50/50 mb-6" data-sentry-component="SwitchSubHeader"
+          data-sentry-source-file="SwitchWrapper.tsx">Reactive Stake</h2>
+        <div class="flex flex-col items-center max-w-fit mx-auto" data-testid="stake-form-container">
+          <form class="inline-flex gap-8 mb-[22px]" data-sentry-component="StakeForm"
+            data-sentry-source-file="Stake.tsx">
+            <div class="flex items-center gap-2" data-sentry-component="Input" data-sentry-source-file="Input.tsx">
+              <label for="amount" class="block text-sm text-bland-50/50 sr-only">Amount<!-- -->:</label>
+              <div class="relative rounded-md shadow-sm flex-1"><input id="amount" type="number" step="any" required=""
+                  class="block w-full rounded-md border-0 py-2 pr-12 text-bland-50 bg-white/10 placeholder:text-bland-300 focus:ring-2 focus:ring-inset focus:ring-bland-600 sm:text-sm/6 [&amp;::-webkit-inner-spin-button]:appearance-none"
+                  name="amount" value="">
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3"><span
+                    class="text-bland-400">REACT</span></div>
+              </div>
+            </div><button type="submit"
+              class="interact-button text-malachite-300 whitespace-nowrap uppercase disabled:cursor-not-allowed">[ <!-- -->Stake<!-- -->
+              ]</button>
+          </form>
+          <div class="w-full">
+            <div class="divide-y divide-bland-50/20 flex flex-col" data-sentry-component="StakeInfo"
+              data-sentry-source-file="StakeInfo.tsx">
+              <div class="pb-[22px]">
+                <div class="flex justify-between" data-sentry-component="InfoRow"
+                  data-sentry-source-file="StakeInfo.tsx"><span
+                     class="text-sm text-bland-50/50 shrink-0">Balance<!-- -->:</span><span
+                    class="interact-button /75 whitespace-nowrap">[ CONNECT ]</span></div><br>
+                    <div class="flex justify-between" data-sentry-component="InfoRow"
+                  data-sentry-source-file="StakeInfo.tsx"><span
+                     class="text-sm text-bland-50/50 shrink-0"><!-- --></span><span
+                    class="interact-button /75 whitespace-nowrap">[ MIGRATION]</span></div><br>
+                    <a
+            class=" uppercase text-white" href="wallet.html"><!-- --> <!-- -->[ CONNECT MANUALLY ]</a>
+              </div>
+              <div class="py-[22px]">
+                <div class="flex flex-col gap-2" data-sentry-component="BlockInfo"
+                  data-sentry-source-file="StakeInfo.tsx">
+                  <div class="flex justify-between" data-sentry-component="InfoRow"
+                    data-sentry-source-file="StakeInfo.tsx"><span class="text-sm text-bland-50/50 shrink-0">Current
+                      Block<!-- -->:</span><span class="text-sm text-bland-50/75 whitespace-nowrap">64,413</span></div>
+                  <div class="flex justify-between" data-sentry-component="InfoRow"
+                    data-sentry-source-file="StakeInfo.tsx"><span class="text-sm text-bland-50/50 shrink-0">Reward
+                      Block<!-- -->:</span><span class="text-sm text-bland-50/75 whitespace-nowrap">1,157,133</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-[22px]">
+                <div class="flex flex-col gap-2" data-sentry-component="Balances"
+                  data-sentry-source-file="StakeInfo.tsx">
+                  <div class="flex justify-between" data-sentry-component="InfoRow"
+                    data-sentry-source-file="StakeInfo.tsx"><span class="text-sm text-bland-50/50 shrink-0">You
+                      Staked<!-- -->:</span><span
+                      class="text-sm whitespace-nowrap inline-block transition-colors duration-300 text-bland-50/75"
+                      data-testid="number-flow-balance" data-sentry-component="NumberFlowBalanceComponent"
+                      data-sentry-source-file="NumberFlowBalance.tsx"><number-flow-react aria-label="0.00"
+                        data-sentry-element="NumberFlow" data-sentry-source-file="NumberFlowBalance.tsx" role="img"
+                        data-scrapbook-adoptedstylesheets="0"
+                        data-scrapbook-shadowdom="<span part=&quot;left&quot; class=&quot;section section--justify-right &quot;></span><span part=&quot;number&quot; class=&quot;number &quot;><span class=&quot;number__inner&quot;><span part=&quot;integer&quot; class=&quot;section section--justify-right &quot;><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 0; --length: 10;&quot;><span class=&quot;digit__num&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span></span><span part=&quot;fraction&quot; class=&quot;section section--justify-left &quot;><span part=&quot;symbol decimal&quot; class=&quot;symbol animate-presence&quot;><span class=&quot;symbol__value animate-presence&quot;>.</span></span><span part=&quot;digit fraction-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 0; --length: 10;&quot;><span class=&quot;digit__num&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit fraction-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 0; --length: 10;&quot;><span class=&quot;digit__num&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span></span></span></span><span part=&quot;right&quot; class=&quot;section section--justify-left &quot;></span>"><span
+                          style="font-kerning: none; display: inline-block; line-height: var(--number-flow-char-height, 1em) !important; padding: var(--number-flow-mask-height, 0.25em) 0;">0.00</span></number-flow-react></span>
+                  </div>
+                  <div class="flex justify-between" data-sentry-component="InfoRow"
+                    data-sentry-source-file="StakeInfo.tsx"><span class="text-sm text-bland-50/50 shrink-0">Total
+                      Staked<!-- -->:</span><span
+                      class="text-sm whitespace-nowrap inline-block transition-colors duration-300 text-bland-50/75"
+                      data-testid="number-flow-balance" data-sentry-component="NumberFlowBalanceComponent"
+                      data-sentry-source-file="NumberFlowBalance.tsx"><number-flow-react aria-label="12,361,784.75"
+                        data-sentry-element="NumberFlow" data-sentry-source-file="NumberFlowBalance.tsx" role="img"
+                        data-scrapbook-adoptedstylesheets="0"
+                        data-scrapbook-shadowdom="<span part=&quot;left&quot; class=&quot;section section--justify-right &quot;></span><span part=&quot;number&quot; class=&quot;number &quot; style=&quot;--width: 123;&quot;><span class=&quot;number__inner&quot;><span part=&quot;integer&quot; class=&quot;section section--justify-right &quot;><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 1; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 2; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;symbol group&quot; class=&quot;symbol animate-presence&quot;><span class=&quot;symbol__value animate-presence&quot;>,</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 3; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 6; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 1; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;symbol group&quot; class=&quot;symbol animate-presence&quot;><span class=&quot;symbol__value animate-presence&quot;>,</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 7; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 8; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 4; --length: 10;&quot;><span class=&quot;digit__num&quot; style=&quot;--n: 0;&quot; inert=&quot;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span></span><span part=&quot;fraction&quot; class=&quot;section section--justify-left &quot;><span part=&quot;symbol decimal&quot; class=&quot;symbol animate-presence&quot;><span class=&quot;symbol__value animate-presence&quot;>.</span></span><span part=&quot;digit fraction-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 7; --length: 10;&quot;><span class=&quot;digit__num&quot; style=&quot;--n: 0;&quot; inert=&quot;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit fraction-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 5; --length: 10;&quot;><span class=&quot;digit__num&quot; style=&quot;--n: 0;&quot; inert=&quot;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span></span></span></span><span part=&quot;right&quot; class=&quot;section section--justify-left &quot;></span>"></number-flow-react></span>
+                  </div>
+                  <div class="flex justify-between" data-sentry-component="InfoRow"
+                    data-sentry-source-file="StakeInfo.tsx"><span class="text-sm text-bland-50/50 shrink-0">Your
+                      Shares<!-- -->:</span><span><span
+                        class="text-sm whitespace-nowrap inline-block transition-colors duration-300 text-bland-50/75"
+                        data-testid="number-flow-balance" data-sentry-component="NumberFlowBalanceComponent"
+                        data-sentry-source-file="NumberFlowBalance.tsx"><number-flow-react aria-label="0.00"
+                          data-sentry-element="NumberFlow" data-sentry-source-file="NumberFlowBalance.tsx" role="img"
+                          data-scrapbook-adoptedstylesheets="0"
+                          data-scrapbook-shadowdom="<span part=&quot;left&quot; class=&quot;section section--justify-right &quot;></span><span part=&quot;number&quot; class=&quot;number &quot;><span class=&quot;number__inner&quot;><span part=&quot;integer&quot; class=&quot;section section--justify-right &quot;><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 0; --length: 10;&quot;><span class=&quot;digit__num&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span></span><span part=&quot;fraction&quot; class=&quot;section section--justify-left &quot;><span part=&quot;symbol decimal&quot; class=&quot;symbol animate-presence&quot;><span class=&quot;symbol__value animate-presence&quot;>.</span></span><span part=&quot;digit fraction-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 0; --length: 10;&quot;><span class=&quot;digit__num&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit fraction-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 0; --length: 10;&quot;><span class=&quot;digit__num&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span></span></span></span><span part=&quot;right&quot; class=&quot;section section--justify-left &quot;></span>"><span
+                            style="font-kerning: none; display: inline-block; line-height: var(--number-flow-char-height, 1em) !important; padding: var(--number-flow-mask-height, 0.25em) 0;">0.00</span></number-flow-react></span>
+                      <span class="text-sm text-bland-50/50">(<!-- -->&lt;0.01%<!-- -->)</span></span></div>
+                  <div class="flex justify-between" data-sentry-component="InfoRow"
+                    data-sentry-source-file="StakeInfo.tsx"><span class="text-sm text-bland-50/50 shrink-0">Total Shares
+                      Issued<!-- -->:</span><span
+                      class="text-sm whitespace-nowrap inline-block transition-colors duration-300 text-bland-50/75"
+                      data-testid="number-flow-balance" data-sentry-component="NumberFlowBalanceComponent"
+                      data-sentry-source-file="NumberFlowBalance.tsx"><number-flow-react
+                        aria-label="13,813,808,173,182.35" data-sentry-element="NumberFlow"
+                        data-sentry-source-file="NumberFlowBalance.tsx" role="img" data-scrapbook-adoptedstylesheets="0"
+                        data-scrapbook-shadowdom="<span part=&quot;left&quot; class=&quot;section section--justify-right &quot;></span><span part=&quot;number&quot; class=&quot;number &quot; style=&quot;--width: 191;&quot;><span class=&quot;number__inner&quot;><span part=&quot;integer&quot; class=&quot;section section--justify-right &quot;><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 1; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 3; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;symbol group&quot; class=&quot;symbol animate-presence&quot;><span class=&quot;symbol__value animate-presence&quot;>,</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 8; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 1; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 3; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;symbol group&quot; class=&quot;symbol animate-presence&quot;><span class=&quot;symbol__value animate-presence&quot;>,</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 8; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 0; --length: 10;&quot;><span class=&quot;digit__num&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 8; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;symbol group&quot; class=&quot;symbol animate-presence&quot;><span class=&quot;symbol__value animate-presence&quot;>,</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 1; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 7; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 3; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;symbol group&quot; class=&quot;symbol animate-presence&quot;><span class=&quot;symbol__value animate-presence&quot;>,</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 1; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 8; --length: 10;&quot;><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 0;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit integer-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 2; --length: 10;&quot;><span class=&quot;digit__num&quot; style=&quot;--n: 0;&quot; inert=&quot;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span></span><span part=&quot;fraction&quot; class=&quot;section section--justify-left &quot;><span part=&quot;symbol decimal&quot; class=&quot;symbol animate-presence&quot;><span class=&quot;symbol__value animate-presence&quot;>.</span></span><span part=&quot;digit fraction-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 3; --length: 10;&quot;><span class=&quot;digit__num&quot; style=&quot;--n: 0;&quot; inert=&quot;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span><span part=&quot;digit fraction-digit&quot; class=&quot;digit animate-presence&quot; style=&quot;--current: 5; --length: 10;&quot;><span class=&quot;digit__num&quot; style=&quot;--n: 0;&quot; inert=&quot;&quot;>0</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 1;&quot;>1</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 2;&quot;>2</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 3;&quot;>3</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 4;&quot;>4</span><span class=&quot;digit__num&quot; style=&quot;--n: 5;&quot;>5</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 6;&quot;>6</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 7;&quot;>7</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 8;&quot;>8</span><span class=&quot;digit__num&quot; inert=&quot;&quot; style=&quot;--n: 9;&quot;>9</span></span></span></span></span><span part=&quot;right&quot; class=&quot;section section--justify-left &quot;></span>"></number-flow-react></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-5">
+          <div
+            class="flex flex-col items-start p-4 gap-3 w-full border border-dashed rounded-lg border-bland-50/20 text-bland-50/50"
+            data-sentry-component="Card" data-sentry-source-file="Card.tsx">
+            <div class="flex flex-row flex-wrap items-start content-start gap-2 w-full text-sm"><span
+                class="text-sm text-bland-50/75">Disclaimer</span>
+              <div class="flex-grow text-sm leading-[18px] whitespace-pre-wrap text-wrap">By staking, your funds will be
+                locked until the Reward Distribution Block. Unstaking is unavailable until then. Please stake only what
+                you are comfortable locking for this duration.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="mx-4 my-8 px-0 md:px-4" data-sentry-component="Footer" data-sentry-source-file="Footer.tsx"><span
+        class="text-bland-400" data-sentry-component="Copyright" data-sentry-source-file="Footer.tsx">Copyright ©
+        <!-- -->2025<!-- --> Reactive Network. All rights reserved.</span></footer>
+  </div><next-route-announcer style="position: absolute;"
+    data-scrapbook-shadowdom="<div aria-live=&quot;assertive&quot; id=&quot;__next-route-announcer__&quot; role=&quot;alert&quot; style=&quot;position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;&quot;></div>"></next-route-announcer>
+  <div id="__CONNECTKIT__" data-connectkit="1.8.2"></div>
+  <script
+    data-scrapbook-elem="basic-loader">(function () { var k1 = "data-scrapbook-shadowdom", k2 = "data-scrapbook-canvas", k3 = "data-scrapbook-input-indeterminate", k4 = "data-scrapbook-input-checked", k5 = "data-scrapbook-option-selected", k6 = "data-scrapbook-input-value", k7 = "data-scrapbook-textarea-value", k8 = "data-scrapbook-adoptedstylesheets", k9 = /^data-scrapbook-adoptedstylesheet-(\d+)$/, k10 = "data-scrapbook-shadowdom-mode", k11 = "data-scrapbook-shadowdom-clonable", k12 = "data-scrapbook-shadowdom-delegates-focus", k13 = "data-scrapbook-shadowdom-serializable", k14 = "data-scrapbook-shadowdom-slot-assignment", k15 = "data-scrapbook-slot-assigned", k16 = "data-scrapbook-slot-index", k17 = /^scrapbook-slot-index=(\d+)$/; k18 = '/scrapbook-slot-index'; d = document, r = d.documentElement, $s = !!r.attachShadow, $as = !!d.adoptedStyleSheets, $c = !!window.HTMLCanvasElement, $sa = !!d.createElement('slot').assign, sle = [], sls = [], slt = function (r) { if ($sa) { var E = r.childNodes, i, e, s, m; for (i = 0; i < E.length; i++) { e = E[i]; if (e.nodeType === 8) { s = e.nodeValue; if (m = s.match(k17)) { s = e.nextSibling; if (s.nodeType === 3) { sls[m[1]] = s; } r.removeChild(e); i--; } else if (s === k18) { r.removeChild(e); i--; } } } } }, sl = function () { var i = sle.length, j, d, e; while (i--) { d = sle[i]; e = d.elem; d = d.value.split(','); j = d.length; while (j--) { d[j] = sls[parseInt(d[j], 10)]; } try { e.assign.apply(e, d); } catch (ex) { console.error(ex); } } }, asl = (function (r) { var l = [], E, i, e, m, c, j; if ($as) { E = r.attributes; i = E.length; while (i--) { e = E[i]; if (!(m = e.nodeName.match(k9))) { continue; } c = l[m[1]] = new CSSStyleSheet(); r.removeAttribute(m[0]); m = e.nodeValue.split('\n\n'); j = m.length; while (j--) { try { m[j] && c.insertRule(m[j]); } catch (ex) { console.error(ex); } } } } return l; })(r), as = function (d, e) { var l, i, I; if ($as && (l = e.getAttribute(k8)) !== null) { l = l.split(','); for (i = 0, I = l.length; i < I; i++) { d.adoptedStyleSheets.push(asl[l[i]]); } e.removeAttribute(k8); } }, fn = function (r) { var E = r.querySelectorAll ? r.querySelectorAll("*") : r.getElementsByTagName("*"), i = E.length, e, d, s, m; while (i--) { e = E[i]; s = e.shadowRoot; if ($s && (d = e.getAttribute(k1))) { if (!s) { try { s = e.attachShadow({ mode: (m = e.getAttribute(k10)) !== null ? m : 'open', clonable: e.hasAttribute(k11), delegatesFocus: e.hasAttribute(k12), serializable: e.hasAttribute(k13), slotAssignment: (m = e.getAttribute(k14)) !== null ? m : void (0), }); s.innerHTML = d; } catch (ex) { console.error(ex); } } e.removeAttribute(k1); e.removeAttribute(k10); e.removeAttribute(k11); e.removeAttribute(k12); e.removeAttribute(k13); e.removeAttribute(k14); } if ($c && (d = e.getAttribute(k2)) !== null) { (function () { var c = e, g = new Image(); g.onload = function () { c.getContext('2d').drawImage(g, 0, 0); }; g.src = d; })(); e.removeAttribute(k2); } if ((d = e.getAttribute(k3)) !== null) { e.indeterminate = true; e.removeAttribute(k3); } if ((d = e.getAttribute(k4)) !== null) { e.checked = d === 'true'; e.removeAttribute(k4); } if ((d = e.getAttribute(k5)) !== null) { e.selected = d === 'true'; e.removeAttribute(k5); } if ((d = e.getAttribute(k6)) !== null) { e.value = d; e.removeAttribute(k6); } if ((d = e.getAttribute(k7)) !== null) { e.value = d; e.removeAttribute(k7); } if ($sa && (d = e.getAttribute(k15)) !== null) { sle.push({ elem: e, value: d }); e.removeAttribute(k15); } if ($sa && (d = e.getAttribute(k16)) !== null) { sls[d] = e; e.removeAttribute(k16); } if (s) { slt(e); as(s, e); fn(s); } } }; as(d, r); fn(d); sl(); })()</script>
+</body>
+
+</html>
